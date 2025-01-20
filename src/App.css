@@ -1,0 +1,198 @@
+/*App*/
+body {
+  margin: 0;
+  font-family: "PT serif" serif;
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+}
+
+/*Navbar*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #ddd6d6;
+  color: #fff;
+}
+
+.product-id {
+  display: flex;
+  cursor: pointer;
+}
+
+.grandeur-logo {
+  width: 40px;
+  margin: none;
+  padding: none;
+  margin-left: 10px;
+}
+
+.prod-name {
+  color: rgb(25, 24, 24);
+  margin: none;
+  padding: none;
+  font-size: 17px;
+  margin-top: 18px;
+  margin-left: 5px;
+  font-family: "PT serif";
+  font-weight: 600;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.nav-links a {
+  color: #0e0d0d;
+  text-decoration: none;
+  font-weight: 700;
+  position: relative;
+  font-size: 14px;
+  
+}
+
+.nav-links a::after{
+  position: absolute;
+  transition: width 0.3s ease-in;
+  content: "";
+  background-color: rgb(213, 71, 71);
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  margin-bottom: -3px;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/*HeroSection*/
+.hero {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  background: url('/public/images/GrandeurCollections.jpeg') center/cover no-repeat;
+  background-position: center;
+  animation: moveBackground 10s linear infinite;
+}
+
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+.hero-content {
+  color: white;
+  text-align: center;
+}
+
+.shop-now {
+  background: #ff6347;
+  padding: 0.5rem 1rem;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/*ProductSection*/
+.products {
+  padding: 2rem;
+}
+
+.product-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  row-gap: 10px;
+  background-color: #e7dfdf;
+  border-radius: 8px;
+}
+
+.prod-item {
+  background-color: #ded6d6;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 3px 8px 9px rgb(79, 77, 77);
+  width: 200px;
+  display: block;
+  transition: 0.3sec ease-in-out;
+}
+
+.prod-item:hover {
+  opacity: 80%;
+}
+
+.prod-describe p {
+  font-family: "PT serif";
+  width: auto;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: none;
+  padding: 0%;
+}
+
+.prod-describe .price {
+  font-size: 15px;
+  margin: none;
+  padding: none;
+}
+
+.prod-describe button {
+  background: linear-gradient(45deg, rgb(215, 134, 134),rgb(211, 193, 60));
+  border-radius: 20px;
+  padding: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border: none;
+  margin-bottom: 10px;
+  font-family: "PT serif" serif;
+  font-weight: 500;
+  transition: 0.3s ease-in;
+}
+/*
+.prod-describe button:hover {
+  opacity: 80%;
+  background: linear-gradient(-45deg, rgb(215, 134, 134),rgb(211, 193, 60));
+}
+*/
+.prod-describe button:active{
+  background: linear-gradient(-45deg, rgb(215, 134, 134),rgb(211, 193, 60));
+}
+
+
+/*
+.product-item {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin: 1rem;
+  text-align: center;
+}
+*/
+/*Footer*/
+.footer {
+  padding: 1rem;
+  background: #333;
+  color: #fff;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+}
+
