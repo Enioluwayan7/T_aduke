@@ -119,7 +119,7 @@ body {
   justify-content: space-around;
   flex-wrap: wrap;
   width: 100%;
-  row-gap: 10px;
+  row-gap: 20px;
   background-color: #e7dfdf;
   border-radius: 8px;
 }
@@ -196,3 +196,68 @@ img {
   width: 100%;
 }
 
+
+/*Link Tree */
+
+.linktree-container {
+  background-color: #f6ecec;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile-image {
+  width: 300px;
+  height: 60vh;
+  margin-top: 10px;
+}
+
+.profile-image img {
+  border-radius: 8px;
+  box-shadow: 8px 8px 8px rgb(202, 159, 159);
+}
+
+.profile-image p {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: none;
+  font-size: 30px;
+}
+
+.linktrees {
+  display: block;
+  width: auto;
+  text-align: center;
+  font-family: 'PT serif';
+  
+}
+
+ .links {
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  background-color: #d8c8c8;
+  display: flex;
+  padding: 15px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  margin: 15px;
+  justify-content: space-between;
+  
+}
+
+.social {
+  text-align: left;
+  color: #0e0d0d;
+  font-size: 30px;
+}
+
+.link-button {
+  color: #0e0d0d;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: 'PT serif' arial;
+}

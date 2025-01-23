@@ -15,7 +15,7 @@ function ProductSection() {
         </div>
 
         <div className='prod-item'>
-          <img src='./images/aduke.jpg' alt= 'Aduke black dress with aso oke' />
+          <img src='./images/Aduke.jpg' alt= 'Aduke black dress with aso oke' />
            <div className='prod-describe'>
             <p>Aduke black dress with aso-oke Rose</p>
             <p className='price'>£80</p>

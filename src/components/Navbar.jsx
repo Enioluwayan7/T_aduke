@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
@@ -8,14 +9,15 @@ function Navbar() {
         <h4 className='prod-name'>GrandeurDefined</h4>
       </div>
       <ul className="nav-links">
-        <li><a href="#home">Home</a></li>      
-        <li><a href="#products">Products</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#login">Login</a></li>
+        <li><Link to={"/"}>Home</Link></li>      
+        <li><Link to={"/product"}>Products</Link></li>
+        <li><Link to={"/about"}>About</Link></li>
+        <li><Link to={"/contact"}>Contact</Link></li>
+        <li><a href="./login">Login</a></li>
       </ul>
     </nav>
   );
+  
 }
 
 export default Navbar;
