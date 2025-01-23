@@ -98,6 +98,11 @@ body {
 .hero-content {
   color: white;
   text-align: center;
+  position: relative;
+  z-index: 1; /* Place above the video */
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
 .shop-now {
@@ -136,6 +141,10 @@ body {
 
 .prod-item:hover {
   opacity: 80%;
+}
+
+.prod-describe {
+  text-align: center;
 }
 
 .prod-describe p {
@@ -197,10 +206,10 @@ img {
 }
 
 
-/*Link Tree */
+/*contact */
 
 .linktree-container {
-  background-color: #f6ecec;
+  
 }
 .container {
   display: flex;
@@ -260,4 +269,112 @@ img {
   font-weight: bold;
   font-size: 20px;
   font-family: 'PT serif' arial;
+}
+
+/* Contact Section */
+
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: 100%;
+  z-index: -1; /* Place behind the content */
+  object-fit: cover; /* Ensures the video covers the entire area */
+}
+/* Media Queries */
+
+/* For tablets and smaller laptops */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  .content {
+    padding: 15px;
+  }
+}
+
+/* For phones */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .content {
+    padding: 10px;
+  }
+
+  .background-video {
+    object-fit: fill; /* Adjusts for smaller screens */
+  }
+}
+
+/* For very small devices */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .content {
+    padding: 5px;
+  }
+}
+
+
+/* Login Section */
+
+/* Login.css */
+
+.login-container {
+  text-align: center;
+  margin-top: 50px;
+  font-family: Arial, sans-serif;
+}
+
+.login-form {
+  display: inline-block;
+  text-align: left;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #f9f9f9;
+}
+
+.input-field {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
 }
