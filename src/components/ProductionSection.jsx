@@ -1,4 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
+import '../SlideBtn.css'
+
+
+{/*
+const ImageSlider = () => {
+  const images = [
+    "./images/Eve.jpg",
+    "./images/Aduke.jpg",
+    "./images/DamDam.jpeg",
+    "./images/Funmilayo.jpg",
+    "./images/Grandeur.jpg",
+    "./images/Olufayo.jpeg",
+  ]
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => prevIndex === 0 ? images.length - 1 : prevIndex - 1);
+  };
+
+  return (
+    <div className='slider'>
+      <div className='slides' style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+          {images.map((image, index) => (
+            <img src={image} alt={`Slide ${index + 1}`} key={index} />
+          ))}
+      </div>
+      <div className='buttons'>
+        <button className='prev' onClick={prevSlide}> ❮ </button>
+      </div>
+      <div className='buttons'>
+        <button className='next' onClick={nextSlide}> ❯ </button>
+      </div>  
+    </div>
+  );
+};
+
+export default ImageSlider;
+
+*/}
 
 function ProductSection() {
   return (
