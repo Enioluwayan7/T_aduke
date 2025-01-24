@@ -66,10 +66,6 @@ const ContactUs = () => {
             <p><i class="bi bi-three-dots-vertical"></i></p>
           </div>
         </div>
-
-        <footer>
-          <p>Join Grandeur Defines on Linktree</p>
-        </footer>
       </div>
     </div>
   );

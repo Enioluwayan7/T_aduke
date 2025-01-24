@@ -3,7 +3,7 @@ import React from 'react';
 function ProductSection() {
   return (
     <section className="products" id="products">
-      <h2>Our Collection</h2>
+      <h2 className='col-head'>Our Collection's</h2>
       <div className="product-list">
         <div className='prod-item'>
           <img src='./images/Eve.jpg' alt= 'Eve maxi Dress' />

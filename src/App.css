@@ -139,6 +139,13 @@ body {
   transition: 0.3sec ease-in-out;
 }
 
+.col-head {
+  text-align: center;
+  font-family: 'PT serif';
+  font-size: 30px;
+  font-weight: 600;
+}
+
 .prod-item:hover {
   opacity: 80%;
 }
@@ -196,9 +203,10 @@ body {
 /*Footer*/
 .footer {
   padding: 1rem;
-  background: #333;
-  color: #fff;
+  background: #ddd6d6;
+  color: #060606;
   text-align: center;
+  font-weight: 700;
 }
 
 img {
