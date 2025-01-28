@@ -10,11 +10,14 @@ function Navbar() {
       </div>
       <ul className="nav-links">
         <li><Link to={"/"}>Home</Link></li>      
-        <li><Link to={"/product"}>Products</Link></li>
-        <li><Link to={"/about"}>About</Link></li>
+        <li><Link to={"/product"}>Shop All</Link></li>
+        <li><Link to={"/about"}>Our Brand</Link></li>
         <li><Link to={"/contact"}>Contact</Link></li>
-        <li><Link to={"/login"}>Login </Link></li>
       </ul>
+      <div className='loginCont'>
+        <img src='./images/Login.jpg' alt='login' className='login-img' />
+        <Link to={"/login"} className='login-name'>Login</Link>
+      </div>
     </nav>
   );
   

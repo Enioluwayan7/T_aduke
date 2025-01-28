@@ -4,7 +4,8 @@ import Homepage from "../pages/Homepage";
 import ProductPage from "../pages/ProductPage";
 import AboutUs from "../pages/AboutUs";
 import Contact from "../pages/Contact";
-import Login from "../pages/Login"
+import Login from "../pages/Login";
+import Collections from "../pages/CollectionSrc";
 
 const mainRoute = createBrowserRouter(
     [
@@ -30,6 +31,10 @@ const mainRoute = createBrowserRouter(
                 {
                     path: "/login",
                     element: <Login />
+                },
+                {
+                    path: "/collections",
+                    element: <Collections />
                 }
             ]
         }

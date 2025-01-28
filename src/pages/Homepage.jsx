@@ -1,13 +1,13 @@
 import React from 'react'
 import HeroSection from '../components/HeroSection'
-import ProductSection from '../components/ProductionSection'
+import Collections from "../components/Collections"
 
 const Homepage = () => {
     console.log("freaking show")
   return (
     <div>
         <HeroSection />
-        <ProductSection />
+        <Collections />
     </div>
   )
 }
