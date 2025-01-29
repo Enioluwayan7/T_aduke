@@ -107,6 +107,7 @@ function ProductSection() {
           <div className='prod-describe'>
             <p>Grandeur short black dress with white flower like design </p>
             <p className='price'>£80</p>
+            <Link to={"./cart"}>Add to Cart</Link>
             <button>Add to Cart</button>
           </div>
         </div>

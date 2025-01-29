@@ -6,6 +6,7 @@ import AboutUs from "../pages/AboutUs";
 import Contact from "../pages/Contact";
 import Login from "../pages/Login";
 import Collections from "../pages/CollectionSrc";
+import Cart from "../components/Cart"
 
 const mainRoute = createBrowserRouter(
     [
@@ -35,6 +36,10 @@ const mainRoute = createBrowserRouter(
                 {
                     path: "/collections",
                     element: <Collections />
+                },
+                {
+                    path: "/cart",
+                    element: <Cart />
                 }
             ]
         }

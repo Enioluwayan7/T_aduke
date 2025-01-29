@@ -1,4 +1,6 @@
 import React from 'react'
+// import cart from "../components/" 
+import { Link } from 'react-router-dom';
 
 const ProductPage = () => {
   return (
@@ -101,7 +103,8 @@ const ProductPage = () => {
             <div className='prod-describe'>
               <p>RERE maxi dress</p>
               <p className='price'>£100</p>
-              <button className='btn'>Add to Cart</button>
+              
+              <button className='btn'><Link to={"/cart"}>Add to Cart</Link></button>
             </div>
           </div>
         </div>
