@@ -416,11 +416,19 @@ img {
 
 /* About US */
 .about {
-  height: 300hv;
+  height: 100vh;
   width: 800px;
+  background: url('/public/images/GrandeurCollections.jpeg') center/cover no-repeat;
+  font-family: "Merriweather", serif;
+  display: block;
 }
 .vision {
   font-weight: 700;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: linear-gradient(-45deg, rgb(215, 134, 134),rgb(211, 193, 60));
+  
 }
 
 
