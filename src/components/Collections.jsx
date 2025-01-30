@@ -44,7 +44,7 @@ const Collections = () => {
     );
 };
 
-{/*
+/*
         <main className="collections">
             <div>
                 <img src="./images/Aduke.jpg" alt="Aduke" className="col-img" />
@@ -80,6 +80,6 @@ const Collections = () => {
         </>
     )
 }
-    */}
+    */
 
 export default Collections;

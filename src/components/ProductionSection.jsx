@@ -43,6 +43,7 @@ export default ImageSlider;
 
 */}
 
+/*
 function ProductSection() {
   return (
     <section className="products" id="products">
@@ -153,3 +154,4 @@ function ProductSection() {
 }
 
 export default ProductSection;
+*/
