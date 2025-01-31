@@ -86,7 +86,7 @@ const ProductPage = () => {
             <div className="prod-item" key={product.id}>
               <img src={product.image} alt={product.name} />
               <div className="prod-describe">
-                <p>{product.name}</p>
+                <p className='prd-name'>{product.name}</p>
                 <p className="price">£{product.price}</p>
                 <button className="btn" onClick={() => addToCart(product)} >
                   Add to Cart
