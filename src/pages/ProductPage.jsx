@@ -66,13 +66,13 @@ const ProductPage = () => {
   return (
     <div className="relative">
       {/* Cart Icon with Counter */}
-      <div className="fixed top-4 right-4 z-50">
+      <div className="cart-icon">
         <button 
-          className="bg-black text-white p-3 rounded-full flex items-center gap-2"
+          className="cart-button"
           onClick={() => setIsCartOpen(true)}
         >
           <ShoppingCart size={20} />
-          <span className="bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm">
+          <span className="cart-count">
             {cart.length}
           </span>
         </button>
@@ -88,7 +88,7 @@ const ProductPage = () => {
               <div className="prod-describe">
                 <p>{product.name}</p>
                 <p className="price">£{product.price}</p>
-                <button className="btn" onClick={() => addToCart(product)}>
+                <button className="btn" onClick={() => addToCart(product)} >
                   Add to Cart
                 </button>
               </div>
@@ -99,42 +99,41 @@ const ProductPage = () => {
 
       {/* Cart Modal */}
       {isCartOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-end">
-          <div className="bg-white w-full max-w-md h-full p-6 overflow-y-auto">
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold">Shopping Cart</h2>
+        <div className="cart-overlay">
+          <div className="cart-container">
+            <div className="cart-header">
+              <h2 className="cart-title">Shopping Cart</h2>
               <button 
                 onClick={() => setIsCartOpen(false)}
-                className="p-2 hover:bg-gray-100 rounded-full"
+                className="close-button"
               >
                 <X size={24} />
               </button>
             </div>
 
             {cart.length === 0 ? (
-              <p className="text-gray-500">Your cart is empty</p>
+              <p className="empty-cart">Your cart is empty</p>
             ) : (
-              <div className="space-y-4">
+              <div className="cart-items">
                 {cart.map((item) => (
-                  <div key={item.id} className="flex items-center gap-4 border-b pb-4">
+                  <div key={item.id} className="cart-item">
                     <img 
                       src={item.image} 
                       alt={item.name} 
-                      className="w-20 h-20 object-cover rounded"
                     />
-                    <div className="flex-1">
-                      <h3 className="font-medium">{item.name}</h3>
-                      <p className="text-gray-600">£{item.price}</p>
-                      <div className="flex items-center gap-2 mt-2">
+                    <div className="item-details">
+                      <h3 className="item-name">{item.name}</h3>
+                      <p className="item-price">£{item.price}</p>
+                      <div className="quantity-controls">
                         <button 
-                          className="px-2 py-1 border rounded"
+                          className="quantity-btn"
                           onClick={() => updateQuantity(item.id, (quantities[item.id] || 1) - 1)}
                         >
                           -
                         </button>
                         <span>{quantities[item.id] || 1}</span>
                         <button 
-                          className="px-2 py-1 border rounded"
+                          className="quantity-btn"
                           onClick={() => updateQuantity(item.id, (quantities[item.id] || 1) + 1)}
                         >
                           +
@@ -143,19 +142,19 @@ const ProductPage = () => {
                     </div>
                     <button 
                       onClick={() => removeFromCart(item.id)}
-                      className="text-red-500 hover:text-red-700"
+                      className="remove-btn"
                     >
                       Remove
                     </button>
                   </div>
                 ))}
 
-                <div className="mt-6 border-t pt-4">
-                  <div className="flex justify-between text-xl font-bold">
+                <div className=".cart-footer">
+                  <div className="total">
                     <span>Total:</span>
                     <span>£{getTotalPrice()}</span>
                   </div>
-                  <button className="w-full bg-black text-white py-3 rounded mt-4 hover:bg-gray-800">
+                  <button className="checkout-btn">
                     Checkout
                   </button>
                 </div>
