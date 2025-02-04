@@ -548,88 +548,102 @@ img {
 
 /* Login.css */
 
-.login-container {
-  text-align: center;
-  margin-top: 50px;
-  font-family: Arial, sans-serif;
-  height: 50vh;
-
+.login-page {
+  background: linear-gradient(-45deg, rgb(215, 134, 134),rgb(211, 193, 60));
+  height: 90vh;
+  display: flex;
+  font-family: "Merriweather";
 }
 
-.login-form {
-  display: inline-block;
-  width: auto;
-  height: 80%;
-  text-align: left;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  background: #f9f9f9;
+.login-page .grand {
+  margin-top: 50px;
+}
+
+.login-logo {
+  width: 500px;
+  padding: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container {
+  max-width: 600px;
+  width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 8px;
+  background: linear-gradient(-45deg, rgb(215, 134, 134),rgb(211, 193, 60));
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .input-field {
-  display: block;
-  margin: 10px 0;
-  padding: 10px;
-  width: 250px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.input-field:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
 .submit-button {
-  padding: 10px 20px;
-  background: #007bff;
-  color: #fff;
+  padding: 0.8rem;
+  background-color: #007bff;
+  color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
+  font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
 }
 
 .error-message {
-  color: red;
-  margin-bottom: 10px;
-}
-
-
-/* About US */
-/*
-.about {
-  height: 100vh;
-  width: 100%;
-  background: url('/public/images/GrandeurCollections.jpeg') center/cover no-repeat;
-  font-family: "Merriweather", serif;
-  display: block;
-}
-.vision {
-  font-weight: 700;
+  color: #dc3545;
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  background: linear-gradient(-45deg, rgb(215, 134, 134),rgb(211, 193, 60));
-  
-}
-.note {
-  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
 }
 
-.about p {
-  width: auto;
-  font-size: 30px;
-  padding: 20px;
-  font-weight: 700;
-  font-family: "Merriweather";
-  color: rgb(6, 6, 6);
+.toggle-mode {
   text-align: center;
- 
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
 }
 
-.split {
-  display: flex;
-  width: 100%;
+.toggle-button {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;
+  margin-left: 0.3rem;
 }
-*/
 
-
+.toggle-button:hover {
+  text-decoration: underline;
+}
 
 /* Responsive styling for AboutUs component */
 .about-us-container {
@@ -813,36 +827,6 @@ img {
 .image-container:hover .overlay-text {
   opacity: 1;
 }
-
-/*
-.collections .col-img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.collections .note {
-  position: relative;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0%;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  display: flex; 
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  text-align: center;
-  padding: 15px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  border-radius: 10px;
-}
-
-.collections:hover .note {
-  opacity: 1;
-}
-  */
 
 
 /* Cart Section */
