@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { X, ShoppingCart } from 'lucide-react';
 
 const ProductPage = () => {
@@ -22,20 +22,44 @@ const ProductPage = () => {
 
   const addToCart = (item) => {
     const existingItem = cart.find(cartItem => cartItem.id === item.id);
+    let updatedCart;
     if (existingItem) {
       setQuantities(prev => ({
         ...prev,
         [item.id]: (prev[item.id] || 1) + 1
       }));
+      updatedCart = cart;
     } else {
-      setCart([...cart, item]);
+      updatedCart = [...cart, item]
+      setCart(updatedCart);
       setQuantities(prev => ({
         ...prev,
         [item.id]: 1
       }));
     }
-    setIsCartOpen(true);
+    setIsCartOpen(false);
+    
+    const cartData = {
+      items: updatedCart,
+      quantities: {
+        ...quantities,
+        [item.id]: existingItem ? (quantities[item.id] || 1) + 1 : 1
+      }
+    };
+    localStorage.setItem("cartData", JSON.stringify(cartData));
+  
+    console.log(item)
   };
+
+  useEffect(() => {
+    const savedCartData = localStorage.getItem("cartData");
+    if (savedCartData) {
+      const { items, quantities } = JSON.parse(savedCartData);
+      setCart(items);
+      setQuantities(quantities);
+    }
+  }, []);
+
 
   const removeFromCart = (itemId) => {
     setCart(cart.filter(item => item.id !== itemId));
