@@ -1,54 +1,41 @@
-import React, { useEffect, useState } from 'react';
-import { X, ShoppingCart } from 'lucide-react';
+import React, { useEffect, useState } from "react";
+import { X, ShoppingCart } from "lucide-react";
+import { products } from "../utils/contants";
 
 const ProductPage = () => {
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [quantities, setQuantities] = useState({});
 
-  const products = [
-    { id: 1, name: 'Eve maxi Dress', price: 80, image: './images/Eve.jpg' },
-    { id: 2, name: 'Aduke black dress with aso-oke Rose', price: 80, image: './images/Aduke.jpg' },
-    { id: 3, name: 'FUNMILAYO reflective maxi dress', price: 120, image: './images/Funmilayo.jpg' },
-    { id: 4, name: 'Olufayo Black Maxi reflective flare dress', price: 89, image: './images/Olufayo.jpeg' },
-    { id: 5, name: 'DamDam luxe blazer', price: 150, image: './images/DamDam.jpeg' },
-    { id: 6, name: 'Temilade Gradient Laser Texture maxi dress', price: 120, image: './images/Temilade.jpeg' },
-    { id: 7, name: 'Grandeur short black dress with white flower like design', price: 80, image: './images/Grandeur.jpg' },
-    { id: 8, name: 'Ifelodun maxi dress with asooke pocket and bush tassel', price: 100, image: './images/Ifelodun.jpg' },
-    { id: 9, name: 'IREPODUN maxi dress', price: 200, image: './images/Irepodun.jpg' },
-    { id: 10, name: 'MORENIKE maxi dress with bush tassel', price: 100, image: './images/Morenike.jpg' },
-    { id: 11, name: 'RERE maxi dress', price: 100, image: './images/Rere.jpg' }
-  ];
-
   const addToCart = (item) => {
-    const existingItem = cart.find(cartItem => cartItem.id === item.id);
+    const existingItem = cart.find((cartItem) => cartItem.id === item.id);
     let updatedCart;
     if (existingItem) {
-      setQuantities(prev => ({
+      setQuantities((prev) => ({
         ...prev,
-        [item.id]: (prev[item.id] || 1) + 1
+        [item.id]: (prev[item.id] || 1) + 1,
       }));
       updatedCart = cart;
     } else {
-      updatedCart = [...cart, item]
+      updatedCart = [...cart, item];
       setCart(updatedCart);
-      setQuantities(prev => ({
+      setQuantities((prev) => ({
         ...prev,
-        [item.id]: 1
+        [item.id]: 1,
       }));
     }
     setIsCartOpen(false);
-    
+
     const cartData = {
       items: updatedCart,
       quantities: {
         ...quantities,
-        [item.id]: existingItem ? (quantities[item.id] || 1) + 1 : 1
-      }
+        [item.id]: existingItem ? (quantities[item.id] || 1) + 1 : 1,
+      },
     };
     localStorage.setItem("cartData", JSON.stringify(cartData));
-  
-    console.log(item)
+
+    console.log(item);
   };
 
   useEffect(() => {
@@ -60,10 +47,9 @@ const ProductPage = () => {
     }
   }, []);
 
-
   const removeFromCart = (itemId) => {
-    setCart(cart.filter(item => item.id !== itemId));
-    setQuantities(prev => {
+    setCart(cart.filter((item) => item.id !== itemId));
+    setQuantities((prev) => {
       const newQuantities = { ...prev };
       delete newQuantities[itemId];
       return newQuantities;
@@ -74,16 +60,16 @@ const ProductPage = () => {
     if (newQuantity < 1) {
       removeFromCart(itemId);
     } else {
-      setQuantities(prev => ({
+      setQuantities((prev) => ({
         ...prev,
-        [itemId]: newQuantity
+        [itemId]: newQuantity,
       }));
     }
   };
 
   const getTotalPrice = () => {
     return cart.reduce((total, item) => {
-      return total + (item.price * (quantities[item.id] || 1));
+      return total + item.price * (quantities[item.id] || 1);
     }, 0);
   };
 
@@ -91,14 +77,9 @@ const ProductPage = () => {
     <div className="relative">
       {/* Cart Icon with Counter */}
       <div className="cart-icon">
-        <button 
-          className="cart-button"
-          onClick={() => setIsCartOpen(true)}
-        >
+        <button className="cart-button" onClick={() => setIsCartOpen(true)}>
           <ShoppingCart size={20} />
-          <span className="cart-count">
-            {cart.length}
-          </span>
+          <span className="cart-count">{cart.length}</span>
         </button>
       </div>
 
@@ -110,9 +91,9 @@ const ProductPage = () => {
             <div className="prod-item" key={product.id}>
               <img src={product.image} alt={product.name} />
               <div className="prod-describe">
-                <p className='prd-name'>{product.name}</p>
+                <p className="prd-name">{product.name}</p>
                 <p className="price">£{product.price}</p>
-                <button className="btn" onClick={() => addToCart(product)} >
+                <button className="btn" onClick={() => addToCart(product)}>
                   Add to Cart
                 </button>
               </div>
@@ -127,7 +108,7 @@ const ProductPage = () => {
           <div className="cart-container">
             <div className="cart-header">
               <h2 className="cart-title">Shopping Cart</h2>
-              <button 
+              <button
                 onClick={() => setIsCartOpen(false)}
                 className="close-button"
               >
@@ -141,30 +122,37 @@ const ProductPage = () => {
               <div className="cart-items">
                 {cart.map((item) => (
                   <div key={item.id} className="cart-item">
-                    <img 
-                      src={item.image} 
-                      alt={item.name} 
-                    />
+                    <img src={item.image} alt={item.name} />
                     <div className="item-details">
                       <h3 className="item-name">{item.name}</h3>
                       <p className="item-price">£{item.price}</p>
                       <div className="quantity-controls">
-                        <button 
+                        <button
                           className="quantity-btn"
-                          onClick={() => updateQuantity(item.id, (quantities[item.id] || 1) - 1)}
+                          onClick={() =>
+                            updateQuantity(
+                              item.id,
+                              (quantities[item.id] || 1) - 1
+                            )
+                          }
                         >
                           -
                         </button>
                         <span>{quantities[item.id] || 1}</span>
-                        <button 
+                        <button
                           className="quantity-btn"
-                          onClick={() => updateQuantity(item.id, (quantities[item.id] || 1) + 1)}
+                          onClick={() =>
+                            updateQuantity(
+                              item.id,
+                              (quantities[item.id] || 1) + 1
+                            )
+                          }
                         >
                           +
                         </button>
                       </div>
                     </div>
-                    <button 
+                    <button
                       onClick={() => removeFromCart(item.id)}
                       className="remove-btn"
                     >
@@ -178,9 +166,7 @@ const ProductPage = () => {
                     <span>Total:</span>
                     <span>£{getTotalPrice()}</span>
                   </div>
-                  <button className="checkout-btn">
-                    Checkout
-                  </button>
+                  <button className="checkout-btn">Checkout</button>
                 </div>
               </div>
             )}
