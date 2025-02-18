@@ -1,11 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { X, ShoppingCart } from "lucide-react";
+import { getProducts } from "../routes/api";
 import { products } from "../utils/contants";
 
 const ProductPage = () => {
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [quantities, setQuantities] = useState({});
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await getProducts({ per_page: 20 });
+        console.log(res);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+
+    return () => {};
+  }, []);
 
   const addToCart = (item) => {
     const existingItem = cart.find((cartItem) => cartItem.id === item.id);
@@ -34,8 +48,6 @@ const ProductPage = () => {
       },
     };
     localStorage.setItem("cartData", JSON.stringify(cartData));
-
-    console.log(item);
   };
 
   useEffect(() => {

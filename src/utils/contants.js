@@ -1,3 +1,7 @@
+const backendUrl = `http://wordpress.local`;
+
+const baseUrl = `${backendUrl}/wp-json/rae/v1`;
+
 const products = [
   { id: 1, name: "Eve maxi Dress", price: 80, image: "./images/Eve.jpg" },
   {
@@ -57,6 +61,9 @@ const products = [
   { id: 11, name: "RERE maxi dress", price: 100, image: "./images/Rere.jpg" },
 ];
 
+const wc_consumer_key = "ck_3cdd536f1cf80a0c990144523d7306c6c9425604";
+const wc_consumer_secret = "cs_c1c3093d0ae38c0c1082990404408e59d98ad0f8";
+
 //array of image objects with src, alt  and text
 const images = [
   {
@@ -86,4 +93,11 @@ const images = [
   },
 ];
 
-export { images, products };
+export {
+  baseUrl,
+  backendUrl,
+  images,
+  products,
+  wc_consumer_key,
+  wc_consumer_secret,
+};
