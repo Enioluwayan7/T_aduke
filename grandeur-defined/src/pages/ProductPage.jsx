@@ -15,7 +15,7 @@ const ProductPage = () => {
     { id: 6, name: 'Temilade Gradient Laser Texture maxi dress', price: 120, image: './images/Temilade.jpeg' },
     { id: 7, name: 'Grandeur short black dress with white flower like design', price: 80, image: './images/Grandeur.jpg' },
     { id: 8, name: 'Ifelodun maxi dress with asooke pocket and bush tassel', price: 100, image: './images/Ifelodun.jpg' },
-    { id: 9, name: 'IREPODUN maxi dress', price: 200, image: './images/Irepodun.jpg' },
+    { id: 9, name: 'IREPODUN maxi dress', price: 250, image: './images/Irepodun.jpg' },
     { id: 10, name: 'MORENIKE maxi dress with bush tassel', price: 100, image: './images/Morenike.jpg' },
     { id: 11, name: 'RERE maxi dress', price: 100, image: './images/Rere.jpg' }
   ];
