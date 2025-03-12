@@ -5,7 +5,7 @@ const Cart = () => {
     const [cartItems, setCartItems] =useState ([
         {
             id: 1,
-            name: "Aduke black dress with aso-oke Rose",
+            name: " ",
             price: "£80",
             quantity: 10,
             image: "./images/Aduke.jpg"
@@ -94,7 +94,7 @@ const Cart = () => {
         setCartItems((prevItems) =>
         prevItems.map((item) => item.id === id ? {
             ...item, quantity: Math.max(1, item.quantity + amount)
-         } : item)
+         } : item) 
         );
     };
 
