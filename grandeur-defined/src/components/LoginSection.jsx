@@ -1,3 +1,4 @@
+import { Quote } from "lucide-react";
 import React, { useState } from "react";
 
 const AuthSection = () => {
@@ -65,8 +66,9 @@ const AuthSection = () => {
   return (
     <div className="login-page">
       <div className="grand">
-        <h1 className="grandeur-fill">Welcome to GRANDEUR DEFINE'S</h1>
+        <h1 className="grandeur-fill">Welcome to <b>GRANDEUR DEFINE'S</b></h1>
         <img src="../images/logo.png" alt="logo" className="login-logo"/>
+        <p className="quote">- "Confidence is the most beautiful thing you can wear."</p>
       </div>
       <div className="auth-container">
         <h2>{isLogin ? "Login" : "Sign Up"}</h2>
