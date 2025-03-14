@@ -1,4 +1,4 @@
-// import { UserModel } from "../../models/userModel/userModel.js";
+import { UserModel } from "../../models/userModel/userModel.js";
 import bcrypt from "bcrypt";
 
 async function registerUser(req, res) {
@@ -44,20 +44,20 @@ async function registerUser(req, res) {
 
   //register user here
 
-  //   try {
-  //     const user = new UserModel({
-  //       name: name,
-  //       email: email,
-  //       password: hashPassword,
-  //     });
-  //     await user.save();
+  try {
+    const user = new UserModel({
+      name: name,
+      email: email,
+      password: hashPassword,
+    });
+    await user.save();
 
-  //     res
-  //       .status(201)
-  //       .json({ message: "Account created successfully", status: "successful" });
-  //   } catch (error) {
-  //     res.status(400).json({ message: error.message, status: "failed" });
-  //   }
+    res
+      .status(201)
+      .json({ message: "Account created successfully", status: "successful" });
+  } catch (error) {
+    res.status(400).json({ message: error.message, status: "failed" });
+  }
 }
 
 export { registerUser };

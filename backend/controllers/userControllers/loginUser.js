@@ -1,4 +1,4 @@
-// import { UserModel } from "../../models/userModel/userModel.js";
+import { UserModel } from "../../models/userModel/userModel.js";
 import bcrypt from "bcrypt";
 
 async function loginUser(req, res) {
@@ -20,30 +20,30 @@ async function loginUser(req, res) {
     });
   }
 
-  //   const salt = await bcrypt.genSalt(10);
-  //   const hashPassword = await bcrypt.hash(password, salt);
+  const salt = await bcrypt.genSalt(10);
+  const hashPassword = await bcrypt.hash(password, salt);
 
   //login user here
 
-  //   try {
-  //     const user = await UserModel.findOne({ email: email.toLowerCase().trim() });
-  //     if (user === null) {
-  //       return res
-  //         .status(400)
-  //         .json({ message: "Email or password incorrect", status: "failed" });
-  //     }
+  try {
+    const user = await UserModel.findOne({ email: email.toLowerCase().trim() });
+    if (user === null) {
+      return res
+        .status(400)
+        .json({ message: "Email or password incorrect", status: "failed" });
+    }
 
-  //     const isPasswordCorrect = await bcrypt.compare(password, user.password);
+    const isPasswordCorrect = await bcrypt.compare(password, user.password);
 
-  //     if (isPasswordCorrect === false) {
-  //       return res
-  //         .status(400)
-  //         .json({ message: "Email or password incorrect", status: "failed" });
-  //     }
-  //     res.status(200).json({ user, status: "successful" });
-  //   } catch (error) {
-  //     res.status(400).json({ message: "Login failed", status: "failed" });
-  //   }
+    if (isPasswordCorrect === false) {
+      return res
+        .status(400)
+        .json({ message: "Email or password incorrect", status: "failed" });
+    }
+    res.status(200).json({ user, status: "successful" });
+  } catch (error) {
+    res.status(400).json({ message: "Login failed", status: "failed" });
+  }
 }
 
 export { loginUser };

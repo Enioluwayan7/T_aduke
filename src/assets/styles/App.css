@@ -547,10 +547,9 @@ img {
 
 /* Login Section */
 
-/* Login.css */
-
 .login-page {
-  background: linear-gradient(-45deg, rgb(215, 134, 134),rgb(211, 193, 60));
+  padding: 20px 40px;
+  background: linear-gradient(-45deg, rgb(215, 134, 134),rgb(231, 217, 112));
   height: 90vh;
   display: flex;
   font-family: "Merriweather";
@@ -561,9 +560,9 @@ img {
 }
 
 .login-logo {
-  width: 500px;
+  width:350px;
   padding: 40px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 .auth-container {

@@ -1,4 +1,4 @@
-// import Order from "../../models/orderModel/orderModel.js";
+import { OrderModel } from "../../models/orderModel/orderModel.js";
 
 async function createCustomerOrder(req, res) {
   const { reference, customerDeliveryInfo, userCartSummary, cartItems } =
@@ -21,25 +21,25 @@ async function createCustomerOrder(req, res) {
     return res.status(400).json({ message: "Order cart items missing" });
   }
 
-  //   try {
-  //     const orderCreated = await Order.create({
-  //       reference: {
-  //         transaction: reference.transaction,
-  //         message: reference.message,
-  //         status: reference.status,
-  //         trxref: reference.trxref,
-  //       },
-  //       customerDeliveryInfo: customerDeliveryInfo,
-  //       userCartSummary: userCartSummary,
-  //       cartItems: cartItems,
-  //     });
+  try {
+    const orderCreated = await OrderModel.create({
+      reference: {
+        transaction: reference.transaction,
+        message: reference.message,
+        status: reference.status,
+        trxref: reference.trxref,
+      },
+      customerDeliveryInfo: customerDeliveryInfo,
+      userCartSummary: userCartSummary,
+      cartItems: cartItems,
+    });
 
-  //     res
-  //       .status(201)
-  //       .json({ stats: "Success", data: "Order created successfully" });
-  //   } catch (error) {
-  //     res.status(400).json({ stats: "Failed", data: error });
-  //   }
+    res
+      .status(201)
+      .json({ stats: "Success", data: "Order created successfully" });
+  } catch (error) {
+    res.status(400).json({ stats: "Failed", data: error });
+  }
 }
 
 export { createCustomerOrder };
