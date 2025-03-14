@@ -31,14 +31,20 @@ export const getProduct = async (req, res) => {
         product_name: { $regex: id, $options: "i" },
       });
 
-      if (!product) {
+      if (!product || product.length === 0) {
         return res
           .status(400)
           .json({ message: "Product Not Found", status: "failed" });
       }
-
-      res.status(200).json({ data: product, message: "Product Found" });
     }
+
+    if (!product) {
+      return res
+        .status(400)
+        .json({ message: "Product Not Found", status: "failed" });
+    }
+
+    res.status(200).json(product);
   } catch (error) {
     res.status(500).json({ message: "Server Error", error: error.message });
   }
