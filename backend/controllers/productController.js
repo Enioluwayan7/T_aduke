@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import { ProductModel } from "../models/productModel/productModel.js";
 import { nanoid } from "nanoid";
 import validator from "validator";
@@ -10,6 +11,36 @@ export const getAllProducts = async (req, res) => {
     res.status(200).json({ products, status: "success" });
   } catch (error) {
     res.status(400).json({ message: error.message, status: "failed" });
+  }
+};
+
+// GET A PRODUCT
+export const getProduct = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    let product;
+
+    // Check if the provided id is a valid mongoDB ID
+    if (mongoose.Types.ObjectId.isValid(id)) {
+      // search by ID
+      product = await ProductModel.findOne({ _id: id });
+    } else {
+      // search by name
+      product = await ProductModel.find({
+        product_name: { $regex: id, $options: "i" },
+      });
+
+      if (!product) {
+        return res
+          .status(400)
+          .json({ message: "Product Not Found", status: "failed" });
+      }
+
+      res.status(200).json({ data: product, message: "Product Found" });
+    }
+  } catch (error) {
+    res.status(500).json({ message: "Server Error", error: error.message });
   }
 };
 
@@ -107,21 +138,21 @@ export const updateProduct = async (req, res) => {
 
 // DELETE A PRODUCT
 export const deleteProduct = async (req, res) => {
-      try {
-        const product = await ProductModel.findOneAndDelete({
-          _id: req.params.id,
-        });
+  try {
+    const product = await ProductModel.findOneAndDelete({
+      _id: req.params.id,
+    });
 
-        if (product) {
-          res.json({
-            message: "product deleted successfully",
-            status: "success",
-          });
-          console.log("Product deleted");
-        } else {
-          res.status(404).json({ message: "Product not found" });
-        }
-      } catch (error) {
-        res.status(500).json({ message: error.message });
-      }
-}
+    if (product) {
+      res.json({
+        message: "product deleted successfully",
+        status: "success",
+      });
+      console.log("Product deleted");
+    } else {
+      res.status(404).json({ message: "Product not found" });
+    }
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
