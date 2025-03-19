@@ -181,10 +181,7 @@ const ProductPage = () => {
                   </div>
                   <Link to={"/billing"} >
                     <button className="checkout-btn">Checkout </button>
-                    </Link>
-                  
-                  
-                  
+                  </Link>  
                 </div>
               </div>
             )}
