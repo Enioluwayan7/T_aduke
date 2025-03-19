@@ -16,7 +16,7 @@ function BillingPage() {
   const [orderSummary, setOrderSummary] = useState({
     subtotal: 0,
     shipping: 5.99,
-    tax: 0,
+    //tax: 0,
     total: 0
   });
   
@@ -61,20 +61,15 @@ function BillingPage() {
         return total + (item.price * (quantities[item.id] || 1));
       }, 0);
       
-      // Calculate tax (assuming 8% tax rate)
-      const taxRate = 0.08;
-      const tax = subtotal * taxRate;
-      
       // Fixed shipping cost
       const shipping = subtotal > 0 ? 5.99 : 0;
       
       // Calculate total
-      const total = subtotal + tax + shipping;
+      const total = subtotal + shipping;
       
       setOrderSummary({
         subtotal: subtotal.toFixed(2),
         shipping: shipping.toFixed(2),
-        tax: tax.toFixed(2),
         total: total.toFixed(2)
       });
     };
@@ -483,10 +478,10 @@ function BillingPage() {
                     <span className="item-label">Shipping</span>
                     <span className="item-value">£{orderSummary.shipping}</span>
                   </div>
-                  <div className="summary-item">
+                 {/*<div className="summary-item">
                     <span className="item-label">Tax</span>
                     <span className="item-value">£{orderSummary.tax}</span>
-                  </div>
+                  </div> */}
                   <hr className="separator" />
                   <div className="summary-item total">
                     <span className="total-label">Total</span>
