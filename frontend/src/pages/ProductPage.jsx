@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { X, ShoppingCart } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ProductPage = () => {
   const [cart, setCart] = useState([]);
@@ -178,9 +179,12 @@ const ProductPage = () => {
                     <span>Total:</span>
                     <span>£{getTotalPrice()}</span>
                   </div>
-                  <button className="checkout-btn">
-                    Checkout
-                  </button>
+                  <Link to={"/billing"} >
+                    <button className="checkout-btn">Checkout </button>
+                    </Link>
+                  
+                  
+                  
                 </div>
               </div>
             )}

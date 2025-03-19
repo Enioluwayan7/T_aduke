@@ -7,6 +7,7 @@ import Contact from "../pages/Contact";
 import Login from "../pages/Login";
 import Collections from "../pages/CollectionSrc";
 import Cart from "../components/Cart"
+import Billing from "../pages/Billing";
 
 const mainRoute = createBrowserRouter(
     [
@@ -40,6 +41,10 @@ const mainRoute = createBrowserRouter(
                 {
                     path: "/cart",
                     element: <Cart />
+                },
+                {
+                    path: "/billing",
+                    element: <BillingPage />
                 }
             ]
         }
