@@ -364,7 +364,7 @@ function BillingPage() {
                       id="city"
                       name="city"
                       type="text"
-                      placeholder="New York"
+                      placeholder="Input city"
                       value={formData.city}
                       onChange={handleChange}
                       className="input"
