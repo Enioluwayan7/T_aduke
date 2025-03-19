@@ -90,6 +90,100 @@ function BillingPage() {
                                         />
                                         {errors.firstName && <p className="error-message">{errors.firstName}</p>}
                                     </div>
+                                    <div className="form-item">
+                                        <label htmlFor="lastName">Last Name</label>
+                                        <input
+                                            id="lastName"
+                                            name="lastName"
+                                            type="text"
+                                            placeholder="Input your Last Name"
+                                            value={formData.lastName}
+                                            onChange={handleChange}
+                                            className="input"
+                                        />
+                                        {errors.lastName && <p className="error-messsage">{errors.lastName}</p>}
+                                    </div>
+                                </div>
+                                <div className="form-row">
+                                    <div className="for-item">
+                                        <label htmlFor="email">Email</label>
+                                        <input
+                                            id="email"
+                                            name="email"
+                                            type="email"
+                                            placeholder="Input your email"
+                                            value={formData.email}
+                                            onChange={handleChange}
+                                            className="input"
+                                        />
+                                        {errors.email && <p className="error-message">{errors.email}</p>} 
+                                    </div>
+                                    <div className="form-item">
+                                        <label htmlFor="phone">Phone Number</label>
+                                        <input
+                                            id="phone"
+                                            name="phone"
+                                            type="text"
+                                            placeholder="input your phone number"
+                                            value={formData.phone}
+                                            onChange={handleChange}
+                                            className="input"
+                                        />
+                                        {errors.phone &&  <p className="error-message">{errors.phone}</p>}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="card">
+                            <div className="card-header">
+                                <div className="header-with-icon">
+                                    <MapPin className="icon" />
+                                    <h3 className="card-title">Billing Address</h3>
+                                </div>
+                                <div className="card-content">
+                                    <div className="form-item">
+                                        <label htmlFor="address1">Address Line 1</label>
+                                        <input
+                                            id="address1"
+                                            name="address1"
+                                            type="text"
+                                            placeholder="Home Address"
+                                            value={formData.address1}
+                                            onChange={handleChange}
+                                            className="input"
+                                        />
+                                        {errors.address1 && <p className="error-message">{errors.address1}</p>}
+                                    </div>
+                                    <div className="form-item">
+                                        <label htmlFor="address2">Address Line 2 (Optional)</label>
+                                        <input
+                                            id="address2"
+                                            name="address2"
+                                            type="text"
+                                            placeholder="Input your address"
+                                            value={formData.address2}
+                                            onChange={handleChange}
+                                            className="input"
+                                        />
+                                    </div>
+                                    <div className="form-row">
+                                        <div className="form-item">
+                                            <label htmlFor="city">City</label>
+                                            <input
+                                                id="city"
+                                                name="city"
+                                                placeholder="Your city"
+                                                type="text"
+                                                value={formData.city}
+                                                onChange={handleChange}
+                                            />
+                                            {errors.city && <p className="error-message">{errors.city}</p>}
+                                        </div>
+                                        <div className="form-item">
+                                            <label htmlFor="state">State/Province</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

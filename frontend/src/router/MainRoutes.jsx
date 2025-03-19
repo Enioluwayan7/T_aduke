@@ -44,7 +44,7 @@ const mainRoute = createBrowserRouter(
                 },
                 {
                     path: "/billing",
-                    element: <BillingPage />
+                    element: <Billing />
                 }
             ]
         }
