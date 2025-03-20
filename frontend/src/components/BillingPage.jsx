@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { CreditCard, MapPin, Package, User } from "lucide-react";
+import '../css/Billing.css'
 
 function BillingPage() {
   const navigate = useNavigate();
@@ -247,7 +248,7 @@ function BillingPage() {
       <div className="billing-layout">
         <div className="billing-form-container">
           <div className="page-header">
-            <h1 className="page-title">Billing Information</h1>
+            <h1 className="page-title">Delivery Information</h1>
             <p className="page-subtitle">Please enter your billing details</p>
           </div>
 

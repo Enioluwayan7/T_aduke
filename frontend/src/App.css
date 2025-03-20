@@ -937,7 +937,7 @@ img {
 .checkout-btn {
   padding: 10px 20px;
   font-size: 16px;
-  background: #28a745;
+  background: #060706;
   color: white;
   border: none;
   border-radius: 4px;
@@ -946,7 +946,7 @@ img {
 }
 
 .checkout-btn:hover {
-  background: #218838;
+  background: #2e302e;
 }
 
 .modal {
